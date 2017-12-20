@@ -11,7 +11,7 @@ public class EnemyInit : MonoBehaviour {
 	private AudioSource _critSound;
 	private AudioSource _deathSound;
 
-	private Animator _critAnim;
+	private Animator _enemyAnimator;
 
 	public float RangeMin = 0.7f;
 	public float RangeMax = 1.3f;
@@ -39,50 +39,29 @@ public class EnemyInit : MonoBehaviour {
 		_deathSound.pitch = randomPitch;
 
 		// Initialize animators.
-		_critAnim = GetComponent<Animator> ();
+		_enemyAnimator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void GetPunched (bool critical) {
+		if (critical) {
+			CurrentHP -= 2;
+			_enemyAnimator.SetTrigger ("Critical");
 
-		if (CurrentHP > 0) {
-			if (critical) {
-				CurrentHP -= 2;
-				_critAnim.SetTrigger ("Critical");
+			if (CurrentHP <= 0 /* and crit animation is over */) {
+				_enemyAnimator.SetTrigger ("Death");
+			}
 
-				if (CurrentHP > 0) {
-					_critSound.Play ();
-				}
-			} else {
-				CurrentHP--;
 
-				if (CurrentHP > 0) {
-					_painSound.Play ();
-				}
-			} 
-		}
-
-		if (CurrentHP <= 0) {
-			StartCoroutine (Die ());
-		}
-
+		} else {
+			_enemyAnimator.SetTrigger ("Hit");
+		} 
 	}
 
-	IEnumerator Die () {
-		_deathSound.Play ();
-
-		foreach (Transform t in GetComponentsInChildren<Transform> ()) {
-			if (t.tag == "Enemy" && t != transform) {
-				t.gameObject.SetActive (false);
-			}
-		}
-
-		yield return new WaitWhile (() => _deathSound.isPlaying);
-
+	void Die () {
 		Destroy (gameObject);
 	}
 

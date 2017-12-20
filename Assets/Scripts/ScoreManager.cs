@@ -22,9 +22,8 @@ public class ScoreManager : MonoBehaviour {
 	 * Add 100 points if critical, 50 point else. 
 	 * Also add 50 points if the enemy dies.
 	 */
-	public void addPoints (bool isCrit, bool isDead) {
-		_score += (isCrit ? 100 : 50);
-		_score += (isDead ? 50 : 0);
+	public void addPoints (bool isCrit) {
+		_score += (isCrit ? 100 : 0);
 
 		ScoreText.text = "Score : " + _score.ToString ();
 	}
