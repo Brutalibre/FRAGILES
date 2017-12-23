@@ -21,18 +21,24 @@ public class PunchOnCollide : MonoBehaviour {
 
 	public void OnTriggerEnter (Collider col) {
 		GameObject trig = col.gameObject;
-		EnemyInit enemy = trig.GetComponentInParent<EnemyInit> ();
 
 
-		if (_parentPunch._punchWillCollide 
-			&& (trig.tag == "Enemy" || trig.tag == "Critical") 
-			&& !_punchSound.isPlaying) {
+		if (_parentPunch._punchWillCollide && !_punchSound.isPlaying) {
+			if (trig.tag == "Enemy" || trig.tag == "Critical") {
+				EnemyBehaviour enemy = trig.GetComponentInParent<EnemyBehaviour> ();
 
-			_punchSound.PlayOneShot (_punchSound.clip);
+				_punchSound.PlayOneShot (_punchSound.clip);
 
-			bool isCrit = (trig.tag == "Critical");
-			enemy.GetPunched (isCrit);
-			FindObjectOfType<ScoreManager>().addPoints (isCrit);
+				bool isCrit = (trig.tag == "Critical");
+				Debug.Log (isCrit);
+				enemy.GetPunched (isCrit);
+				FindObjectOfType<ScoreManager> ().UpdatePoints (true, isCrit);
+			} else if (trig.tag == "NPC") {
+				CharacterBehaviour npc = trig.GetComponentInParent<CharacterBehaviour> ();
+
+				npc.GetPunched (false);
+				FindObjectOfType<ScoreManager> ().UpdatePoints (false, false);
+			}
 		}
 	}
 }

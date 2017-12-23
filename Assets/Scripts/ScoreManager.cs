@@ -8,6 +8,9 @@ public class ScoreManager : MonoBehaviour {
 	private int _score = 0;
 	public Text ScoreText;
 
+	public int EnemyPoints = 100;
+	public int NpcPoints = 50;
+
 	// Use this for initialization
 	void Start () {
 		ScoreText.text = "Score : " + _score.ToString ();
@@ -19,11 +22,15 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	/* 
-	 * Add 100 points if critical, 50 point else. 
-	 * Also add 50 points if the enemy dies.
+	 * Update the score : add points if enemy and crit, remove points if NPC.
+	 * Do nothing in every other case (enemy not crit, etc).
 	 */
-	public void addPoints (bool isCrit) {
-		_score += (isCrit ? 100 : 0);
+	public void UpdatePoints (bool isEnemy, bool isCrit) {
+		if (isEnemy && isCrit) {
+			_score += EnemyPoints;
+		} else if (!isEnemy) {
+			_score -= NpcPoints;
+		}
 
 		ScoreText.text = "Score : " + _score.ToString ();
 	}
