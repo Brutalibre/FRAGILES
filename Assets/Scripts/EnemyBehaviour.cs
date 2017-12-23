@@ -7,23 +7,14 @@ public class EnemyBehaviour : CharacterBehaviour {
 	public float TotalHP = 3.0f;
 	private float CurrentHP;
 
-	// When component is added for the first time.
-	void Reset() {
-		SoundPaths.Add("Sounds/HurtSound");
-		SoundPaths.Add("Sounds/DeathSound");
-		SoundPaths.Add("Sounds/CritSound");
-
-		CharacterTag = "Enemy";
-	}
-
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
 		base.Start ();
 
 		CurrentHP = TotalHP;
 	}
 
-	public void GetPunched (bool critical) {
+	public override void GetPunched (bool critical) {
 		base.GetPunched (critical);
 
 		if (critical) {
