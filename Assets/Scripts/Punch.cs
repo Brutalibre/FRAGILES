@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Punch : MonoBehaviour {
 
-	private Animator[] _anims;
+	private Animator _anim;
 	private AudioSource _wooshSound;
 
 	public bool _punchWillCollide = false;
@@ -16,7 +16,7 @@ public class Punch : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_anims = GetComponentsInChildren<Animator> ();
+		_anim = GetComponent<Animator> ();
 		_wooshSound = GetComponent<AudioSource> ();
 	}
 	
@@ -27,19 +27,16 @@ public class Punch : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1") && TimerShoot > PunchDelay) {
 			TimerShoot = 0.0f;
 
-			foreach (var anim in _anims) {
-				anim.SetTrigger ("punching");
-			}
+			_anim.SetTrigger ("punching");
 
 			_wooshSound.Play ();
 			_punchWillCollide = true;
-			StartCoroutine(OnCompleteAttackAnimation(_anims[0]));
+			StartCoroutine(OnCompleteAttackAnimation(_anim));
 		}
 	}
 
 	IEnumerator OnCompleteAttackAnimation(Animator anim)
 	{
-		// yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
 		yield return new WaitForSeconds(0.5f);
 		_punchWillCollide = false;
 	}

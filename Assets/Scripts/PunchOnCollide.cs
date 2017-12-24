@@ -30,11 +30,12 @@ public class PunchOnCollide : MonoBehaviour {
 				_punchSound.PlayOneShot (_punchSound.clip);
 
 				bool isCrit = (trig.tag == "Critical");
-				Debug.Log (isCrit);
 				enemy.GetPunched (isCrit);
 				FindObjectOfType<ScoreManager> ().UpdatePoints (true, isCrit);
 			} else if (trig.tag == "NPC") {
 				CharacterBehaviour npc = trig.GetComponentInParent<CharacterBehaviour> ();
+
+				_punchSound.PlayOneShot (_punchSound.clip);
 
 				npc.GetPunched (false);
 				FindObjectOfType<ScoreManager> ().UpdatePoints (false, false);

@@ -2456,10 +2456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterTag: Enemy
-  SoundPaths:
-  - Sounds/HurtSound
-  - Sounds/DeathSound
-  - Sounds/CritSound
   RangeMin: 0.7
   RangeMax: 1.3
   TotalHP: 3

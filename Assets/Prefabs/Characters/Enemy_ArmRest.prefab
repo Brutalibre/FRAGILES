@@ -1154,7 +1154,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960455215548198}
-  m_LocalRotation: {x: -0.9427714, y: 0.31003797, z: -0.106956534, w: -0.060158487}
+  m_LocalRotation: {x: -0.9134635, y: 0.36990565, z: -0.14832035, w: 0.08219129}
   m_LocalPosition: {x: 0, y: 1, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1162,7 +1162,7 @@ Transform:
   - {fileID: 4514065678238272}
   m_Father: {fileID: 4498682856552028}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -190.355, y: -9.618988, z: 35.533997}
+  m_LocalEulerAnglesHint: {x: -177.683, y: -19.393005, z: 44.487}
 --- !u!4 &4906171792091000
 Transform:
   m_ObjectHideFlags: 1
@@ -2579,10 +2579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterTag: Enemy
-  SoundPaths:
-  - Sounds/HurtSound
-  - Sounds/DeathSound
-  - Sounds/CritSound
   RangeMin: 0.7
   RangeMax: 1.3
   TotalHP: 3
