@@ -17,6 +17,8 @@ public class MenuScript : MonoBehaviour {
 	public GameObject[] Characters = new GameObject[3];
 	private Animator[] _animators = new Animator[3];
 
+	private bool _canPunchAndMove = true;
+
 	// Use this for initialization
 	void Start () {
 		SetGlovePosition ();
@@ -30,7 +32,7 @@ public class MenuScript : MonoBehaviour {
 	void Update () {
 		float h = Input.GetAxisRaw ("Horizontal");
 
-		if (h != previousPressed) {
+		if (h != previousPressed && _canPunchAndMove) {
 			if (h > 0) {
 				_glovePosition = (_glovePosition < 2) ? _glovePosition + 1 : 0;
 			} else if (h < 0) {
@@ -42,11 +44,13 @@ public class MenuScript : MonoBehaviour {
 
 		previousPressed = h;
 
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire1") && _canPunchAndMove) {
+			_canPunchAndMove = false;
 			_animators [_glovePosition].SetTrigger ("Hit");
+
 			if (_glovePosition == 0 || _glovePosition == 2) {
 				StartCoroutine (FadeAndChangeScene ());
-				GetComponent<Punch> ().enabled = false;
+				StartCoroutine(GetComponent<Punch> ().OnCompleteAttackAnimationInMenu());
 			}
 		}
 	}

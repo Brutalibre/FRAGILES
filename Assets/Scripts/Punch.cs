@@ -13,6 +13,7 @@ public class Punch : MonoBehaviour {
 	private float TimerShoot = 0.0f;
 
 	private bool isPunching;
+	private bool canPunch = true;
 
 	// Use this for initialization
 	void Start () {
@@ -24,20 +25,25 @@ public class Punch : MonoBehaviour {
 	void Update () {
 		TimerShoot += Time.deltaTime;
 
-		if (Input.GetButtonDown ("Fire1") && TimerShoot > PunchDelay) {
+		if (Input.GetButtonDown ("Fire1") && TimerShoot > PunchDelay && canPunch) {
 			TimerShoot = 0.0f;
 
 			_anim.SetTrigger ("punching");
 
 			_wooshSound.Play ();
 			_punchWillCollide = true;
-			StartCoroutine(OnCompleteAttackAnimation(_anim));
+			StartCoroutine(OnCompleteAttackAnimation());
 		}
 	}
 
-	IEnumerator OnCompleteAttackAnimation(Animator anim)
+	IEnumerator OnCompleteAttackAnimation ()
 	{
 		yield return new WaitForSeconds(0.5f);
 		_punchWillCollide = false;
+	}
+
+	public IEnumerator OnCompleteAttackAnimationInMenu () {
+		yield return new WaitForSeconds(0.5f);
+		canPunch = false;
 	}
 }
