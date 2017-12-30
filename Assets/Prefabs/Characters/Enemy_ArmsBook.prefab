@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 4006765545506446}
   - component: {fileID: 114824359523487674}
   - component: {fileID: 95860918102302212}
+  - component: {fileID: 114063408382592024}
   m_Layer: 0
   m_Name: Enemy_ArmsBook
   m_TagString: Enemy
@@ -1304,6 +1305,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 2ab3bfc9cc451a24ca890f422546b35d, type: 2}
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1439,6 +1441,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: 60fb2f0b7824b2142a4909b13a3ba826, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1575,6 +1578,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: 60fb2f0b7824b2142a4909b13a3ba826, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2345,6 +2349,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292dd61e310e2b648a73786d804e3079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114063408382592024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066726607183142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cebf248a5ec91a40b67e104dda7d8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialToColor: Skin
+  ForcedColor: {r: 1, g: 0, b: 1, a: 0}
+  RangeOfColors:
+  - {r: 0.9632353, g: 0.8667164, b: 0.694096, a: 0}
+  - {r: 0.78676474, g: 0.6456897, b: 0.39338237, a: 0}
+  - {r: 0.5588235, g: 0.39446366, b: 0.14792389, a: 0}
+  - {r: 0.375, g: 0.23161766, b: 0.016544111, a: 0}
+  - {r: 0.19852942, g: 0.119117655, b: 0, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &114124854023401576
 MonoBehaviour:
   m_ObjectHideFlags: 1

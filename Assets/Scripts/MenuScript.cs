@@ -45,12 +45,13 @@ public class MenuScript : MonoBehaviour {
 		previousPressed = h;
 
 		if (Input.GetButtonDown ("Fire1") && _canPunchAndMove) {
-			_canPunchAndMove = false;
 			_animators [_glovePosition].SetTrigger ("Hit");
 
 			if (_glovePosition == 0 || _glovePosition == 2) {
+				_canPunchAndMove = false;
+
 				StartCoroutine (FadeAndChangeScene ());
-				StartCoroutine(GetComponent<Punch> ().OnCompleteAttackAnimationInMenu());
+				StartCoroutine (GetComponent<Punch> ().OnCompleteAttackAnimationInMenu ());
 			}
 		}
 	}

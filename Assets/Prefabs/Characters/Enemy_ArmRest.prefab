@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 4006765545506446}
   - component: {fileID: 114760838506151280}
   - component: {fileID: 95901120042145660}
+  - component: {fileID: 114627481609597750}
   m_Layer: 0
   m_Name: Enemy_ArmRest
   m_TagString: Enemy
@@ -679,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066726607183142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4498682856552028}
@@ -1370,6 +1371,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: cf5af6e6c25ca904d914e1cde95afaab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1676,6 +1678,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: 76058361ab81ca54c839984c5ab49907, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1778,6 +1781,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: 76058361ab81ca54c839984c5ab49907, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1812,6 +1816,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 971cc0f072f6cde4b871ecc1dd87033c, type: 2}
   - {fileID: 2100000, guid: dba6ee6615282464380a3566304f5491, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2567,6 +2572,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292dd61e310e2b648a73786d804e3079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114627481609597750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066726607183142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cebf248a5ec91a40b67e104dda7d8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialToColor: Skin
+  ForcedColor: {r: 1, g: 0, b: 1, a: 0}
+  RangeOfColors:
+  - {r: 0.9632353, g: 0.8667164, b: 0.694096, a: 0}
+  - {r: 0.78676474, g: 0.6456897, b: 0.39338237, a: 0}
+  - {r: 0.5588235, g: 0.39446366, b: 0.14792389, a: 0}
+  - {r: 0.375, g: 0.23161766, b: 0.016544111, a: 0}
+  - {r: 0.19852942, g: 0.119117655, b: 0, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &114760838506151280
 MonoBehaviour:
   m_ObjectHideFlags: 1
