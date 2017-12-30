@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrailerScene.unity
     guid: 05182f6ef78e1364fa5d8a25f03ec961
   - enabled: 1
