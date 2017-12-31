@@ -19,12 +19,22 @@ public class MenuScript : MonoBehaviour {
 
 	private bool _canPunchAndMove = true;
 
+	private AudioSource _whooshSound;
+
 	// Use this for initialization
 	void Start () {
 		SetGlovePosition ();
 
 		for (int i = 0; i < Characters.Length; i++) {
 			_animators[i] = Characters[i].GetComponent<Animator> ();
+		}
+
+		AudioSource[] audios = GetComponents<AudioSource> ();
+		foreach (AudioSource audio in audios) {
+			if (audio.clip.name == "Announcement")
+				audio.PlayDelayed (2.0f);
+			else
+				_whooshSound = audio;
 		}
 	}
 	
@@ -37,6 +47,10 @@ public class MenuScript : MonoBehaviour {
 				_glovePosition = (_glovePosition < 2) ? _glovePosition + 1 : 0;
 			} else if (h < 0) {
 				_glovePosition = (_glovePosition > 0) ? _glovePosition - 1 : 2;
+			}
+
+			if (!_whooshSound.isPlaying) {
+				_whooshSound.Play ();
 			}
 
 			SetGlovePosition ();

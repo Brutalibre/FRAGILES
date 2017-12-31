@@ -28,7 +28,7 @@ public class EnemyBehaviour : CharacterBehaviour {
 	}
 
 	void Die () {
-		Destroy (gameObject);
+		Destroy (transform.parent.gameObject);
 	}
 
 	public float getHealth () {

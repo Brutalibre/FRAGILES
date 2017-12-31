@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using AssemblyCSharp;
+
 public class ScoreManager : MonoBehaviour {
 
 	private int _score = 0;
@@ -13,6 +15,7 @@ public class ScoreManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerStats.Score = _score;
 		ScoreText.text = "Score : " + _score.ToString ();
 	}
 	
@@ -33,5 +36,6 @@ public class ScoreManager : MonoBehaviour {
 		}
 
 		ScoreText.text = "Score : " + _score.ToString ();
+		PlayerStats.Score = _score;
 	}
 }
