@@ -1759,8 +1759,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627079539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 508.5, y: 286, z: 0}
-  m_LocalScale: {x: 1.27125, y: 1.27125, z: 1.27125}
+  m_LocalPosition: {x: 375, y: 211, z: 0}
+  m_LocalScale: {x: 0.9375, y: 0.9375, z: 0.9375}
   m_Children:
   - {fileID: 1613761476}
   - {fileID: 903448065}
@@ -1889,10 +1889,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1066726607183142, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
-      propertyPath: m_Name
-      value: Enemy_ArmsBook
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
   m_IsPrefabParent: 0
@@ -2019,14 +2015,6 @@ Prefab:
     - target: {fileID: 1066726607183142, guid: 07d633b8bd7a1f249b02c7f061691f9a, type: 2}
       propertyPath: m_Name
       value: Enemy_ArmRest (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006765545506446, guid: 07d633b8bd7a1f249b02c7f061691f9a, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006765545506446, guid: 07d633b8bd7a1f249b02c7f061691f9a, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07d633b8bd7a1f249b02c7f061691f9a, type: 2}
@@ -2232,6 +2220,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758318294598486, guid: e5831cecc135b8845adfffdac290063c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5831cecc135b8845adfffdac290063c, type: 2}
@@ -3363,7 +3355,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351900579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -310, y: 203.02542, z: 0}
+  m_LocalPosition: {x: -310, y: 203.11667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2014106955}
@@ -4090,14 +4082,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1666314184}
-  m_LocalRotation: {x: -0, y: 0.999894, z: -0, w: -0.014558783}
-  m_LocalPosition: {x: -5.694, y: -0.7926698, z: -1.517}
+  m_LocalRotation: {x: -0, y: 0.9981619, z: -0, w: 0.06060478}
+  m_LocalPosition: {x: -5.708, y: -0.7926698, z: -1.432}
   m_LocalScale: {x: -0.7000011, y: 0.7, z: 0.70000106}
   m_Children:
   - {fileID: 698240013}
   m_Father: {fileID: 92449789}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -178.33202, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -186.94899, z: 0}
 --- !u!1001 &1673669751
 Prefab:
   m_ObjectHideFlags: 0
@@ -4486,7 +4478,7 @@ MonoBehaviour:
   GameOverScreen: {fileID: 627079542}
   SkipText: {fileID: 1114137980}
   ScoreText: {fileID: 722096760}
-  TimeLimitInSeconds: 120
+  TimeLimitInSeconds: 240
   EmergencyTextColor: {r: 0.8455882, g: 0.31709558, b: 0.31709558, a: 1}
 --- !u!114 &1768722304
 MonoBehaviour:
@@ -4896,7 +4888,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1830549128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 203.02542, z: 0}
+  m_LocalPosition: {x: 300, y: 203.11667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2014106955}
@@ -5713,8 +5705,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014106951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 508.5, y: 286, z: 0}
-  m_LocalScale: {x: 1.27125, y: 1.27125, z: 1.27125}
+  m_LocalPosition: {x: 375, y: 211, z: 0}
+  m_LocalScale: {x: 0.9375, y: 0.9375, z: 0.9375}
   m_Children:
   - {fileID: 1351900580}
   - {fileID: 1830549129}
@@ -5856,14 +5848,6 @@ Prefab:
     - target: {fileID: 1066726607183142, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
       propertyPath: m_Name
       value: Enemy_ArmsBook (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006765545506446, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006765545506446, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608b7bf280f940d41b5bb5d62ce5befb, type: 2}
